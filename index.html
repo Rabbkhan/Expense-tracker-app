@@ -14,15 +14,24 @@
         <h1>Expense tracker App</h1>
         <form>
             <div class="mb-3">
-                <label for="Name" class="form-label">expense amount </label>
-                <input type="text" class="form-control" id="Name" aria-describedby="name">
+                <label for="expense" class="form-label">expense amount </label>
+                <input type="number" class="form-control" id="expense" aria-describedby="name">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">chose description </label>
                 <input type="text" class="form-control" id="description" aria-describedby="email">
             </div>
+            <div class="mb-3">
+
+                <select class="form-select" id="select" aria-label="Default select example">
+                    <option selected> select </option>
+                    <option value="1">bmw</option>
+                    <option value="2">mercedes</option>
+                    <option value="3">honda city</option>
+                </select>
+            </div>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Add expense</button>
         </form>
         <ul id ="listItem">
             

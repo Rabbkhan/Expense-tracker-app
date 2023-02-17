@@ -1,20 +1,24 @@
-let Name = document.getElementById('Name');
-let Ph = document.getElementById('phone');
-let description = document.getElementById('description');
-let btn = document.querySelector('.btn');
+let Expense = document.getElementById('expense');
+let Description = document.getElementById('description');
+let Dropdown = document.getElementById('select');
+let Btn = document.querySelector('.btn');
 
-btn.addEventListener('click', e =>{
+Btn.addEventListener('click', e =>{
     e.preventDefault();
-let username = Name.value;
-let Description = description.value;
-let  phone = Ph.value;
+let expense = Expense.value;
+let description = Description.value;
+let  dropdown = Dropdown.value;
+console.log(expense, description, dropdown);
+
+alert(expense);
 
 const obj ={
-    username,
+    Expense,
     Description,
-    phone
+    Dropdown
 }
-localStorage.setItem(obj.Description, JSON.stringify(obj));
+
+localStorage.setItem(obj.Dropdown, JSON.stringify(obj));
 
 showUserScreen(obj);
 })
@@ -23,7 +27,7 @@ function showUserScreen(obj){
     const parentElem = document.getElementById('listItem');
 
     let childElem = document.createElement('li');
-     childElem.textContent = obj.username + ' - '  + obj.Description ;
+     childElem.textContent = obj.Expense + ' - '  + obj.Description ;
      
    parentElem.appendChild(childElem);
 
@@ -44,9 +48,9 @@ function showUserScreen(obj){
     localStorage.removeItem(obj.Description);
     parentElem.removeChild(childElem);
 
-    Name.value = obj.username;
-    Ph.value = obj.phone;
-    description.value = obj.Description;
+    Expense.value = obj.expense;
+    Dropdown .value = obj.phone;
+    Description.value = obj.Description;
 
    }
 
